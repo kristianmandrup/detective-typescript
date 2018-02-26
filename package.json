@@ -23,8 +23,8 @@
   "homepage": "https://github.com/pahen/detective-typescript",
   "dependencies": {
     "node-source-walk": "^3.3.0",
-    "typescript": "^2.7.1",
-    "typescript-eslint-parser": "^13.0.0"
+    "typescript": "^2.7.2",
+    "typescript-eslint-parser": "github:kristianmandrup/typescript-eslint-parser"
   },
   "devDependencies": {
     "eslint": "^4.18.1",
