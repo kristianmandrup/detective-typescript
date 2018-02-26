@@ -1,6 +1,6 @@
 {
   "name": "detective-typescript",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "author": "Patrik Henningsson <patrik.henningsson@gmail.com>",
   "description": "Get the dependencies of a TypeScript module",
   "main": "index.js",
@@ -22,12 +22,12 @@
   "license": "MIT",
   "homepage": "https://github.com/pahen/detective-typescript",
   "dependencies": {
-    "node-source-walk": "3.2.0",
+    "node-source-walk": "^3.3.0",
     "typescript": "^2.7.1",
     "typescript-eslint-parser": "^13.0.0"
   },
   "devDependencies": {
-    "eslint": "3.14.0",
-    "mocha": "2.0.1"
+    "eslint": "^4.18.1",
+    "mocha": "^5.0.1"
   }
 }
