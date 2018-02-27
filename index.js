@@ -1,5 +1,13 @@
-var Parser = require('typescript-eslint-parser');
+var parser = require('typescript-eslint-parser');
 var Walker = require('node-source-walk');
+
+// exports.parse = function parse(code, options) {
+//   return generateAST(code, options, {
+//     isParseForESLint: false
+//   });
+// };
+
+// const parser =
 
 /**
  * Extracts the dependencies of the supplied TypeScript module
@@ -8,8 +16,8 @@ var Walker = require('node-source-walk');
  * @param  {Object} options - options to pass to the parser
  * @return {String[]}
  */
-module.exports = function(src, options = {}) {
-  options.parser = Parser;
+module.exports = function (src, options = {}) {
+  options.parser = parser;
 
   var walker = new Walker(options);
 
@@ -24,7 +32,7 @@ module.exports = function(src, options = {}) {
   }
 
   var importSpecifiers = {};
-  walker.walk(src, function(node) {
+  walker.walk(src, function (node) {
     switch (node.type) {
       case 'ImportDeclaration':
         if (node.source && node.source.value) {
@@ -35,9 +43,9 @@ module.exports = function(src, options = {}) {
               isDefault: specifier.type === 'ImportDefaultSpecifier',
               name: specifier.local.name
             };
-            importSpecifiers[node.source.value]
-              ? importSpecifiers[node.source.value].push(specifierValue)
-              : importSpecifiers[node.source.value] = [specifierValue];
+            importSpecifiers[node.source.value] ?
+              importSpecifiers[node.source.value].push(specifierValue) :
+              importSpecifiers[node.source.value] = [specifierValue];
           });
         }
         break;
